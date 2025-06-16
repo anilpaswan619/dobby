@@ -7,7 +7,7 @@ const navLinks = [
 ];
 
 const Header = () => (
-  <header className="dobby-header">
+  <header className="dobby-header fixed top-0 left-0 w-full z-50 bg-white shadow transition-all">
     <div className="dobby-header-brand">
       <img
         src="/assets/home-img.png"
