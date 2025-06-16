@@ -34,10 +34,12 @@ const Hero = () => (
         Let Dobby tackle your to-do list with the best pros, transparent
         pricing, and lots of love.
       </p>
-      <div className="dobby-hero-buttons">
+      <div className="dobby-hero-buttons flex flex-col gap-3 sm:flex-row sm:gap-4">
         <a
-          href="#"
+          href="https://apps.apple.com/"
           className="flex items-center bg-black text-white rounded-lg px-4 min-w-[170px] h-[56px] shadow-md hover:bg-gray-900 transition"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <AppleIcon />
           <div className="flex flex-col text-left leading-tight">
@@ -56,8 +58,10 @@ const Hero = () => (
           </div>
         </a>
         <a
-          href="#"
+          href="https://play.google.com/store"
           className="dobby-store-btn flex items-center bg-black text-white rounded-lg px-4 no-underline min-w-[190px] h-[56px] shadow-md hover:bg-gray-900 transition"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <GooglePlayIcon />
           <div className="flex flex-col text-left leading-tight">
