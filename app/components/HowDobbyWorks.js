@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const CAROUSEL_ITEMS = [
   {
@@ -12,7 +12,6 @@ const CAROUSEL_ITEMS = [
     label: "PAYMENT",
     desc: "Pay securely and easily through the app after the job is completed to your satisfaction",
   },
-
   {
     color: "#ffe0c2",
     label: "INVOICE",
@@ -27,13 +26,14 @@ const CAROUSEL_ITEMS = [
 
 function CarouselBar({ activeIndex, onDotClick }) {
   return (
-    <div className="flex flex-col items-center h-20 w-4 mr-2">
+    <div className="flex flex-col items-center h-20 w-4 mr-2 select-none">
       {/* Active bar */}
       <div className="flex flex-col justify-center items-center h-12 w-full transition-all duration-300">
         <div
           className="rounded w-full transition-all duration-300"
           style={{
             height: "2rem",
+            width: "0.7rem",
             background: CAROUSEL_ITEMS[activeIndex].color,
           }}
         ></div>
@@ -56,6 +56,7 @@ function CarouselBar({ activeIndex, onDotClick }) {
             }}
             aria-label={`Go to item ${idx + 1}`}
             onClick={() => onDotClick(idx)}
+            tabIndex={0}
           />
         ))}
       </div>
@@ -65,9 +66,40 @@ function CarouselBar({ activeIndex, onDotClick }) {
 
 export default function HowDobbyWorks() {
   const [active, setActive] = useState(0);
+  const containerRef = useRef(null);
+
+  // Handle wheel/scroll events for vertical carousel
+  React.useEffect(() => {
+    const ref = containerRef.current;
+    if (!ref) return;
+
+    let ticking = false;
+    const onWheel = (e) => {
+      if (ticking) return;
+      ticking = true;
+      setTimeout(() => {
+        ticking = false;
+      }, 200);
+
+      if (e.deltaY > 10) {
+        setActive((prev) => Math.min(prev + 1, CAROUSEL_ITEMS.length - 1));
+      } else if (e.deltaY < -10) {
+        setActive((prev) => Math.max(prev - 1, 0));
+      }
+    };
+
+    ref.addEventListener("wheel", onWheel, { passive: false });
+    return () => ref.removeEventListener("wheel", onWheel);
+  }, []);
 
   return (
-    <section className="container mx-auto relative flex flex-col md:flex-row items-center justify-center w-full py-16 px-4 bg-white overflow-hidden">
+    <section
+      ref={containerRef}
+      className="container mx-auto relative flex flex-col md:flex-row items-center justify-center w-full py-16 px-4 bg-white overflow-hidden"
+      tabIndex={0}
+      aria-label="How Dobby Works Carousel"
+      style={{ outline: "none" }}
+    >
       {/* Left: Phone image */}
       <div className="relative z-10 flex-1 flex w-full md:w-auto mb-10 md:mb-0">
         <img
