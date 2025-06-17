@@ -26,7 +26,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="dobby-header fixed top-0 left-0 w-full z-50 bg-white shadow transition-all px-4 md:px-18 flex items-center h-20 justify-between">
+    <header className="shadow-md dobby-header fixed top-0 left-0 w-full z-50 bg-white shadow transition-all px-4 md:px-18 flex items-center h-20 justify-between">
       {/* Brand */}
       <div className="flex items-center">
         <img
@@ -41,13 +41,15 @@ const Header = () => {
         </span>
       </div>
       {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center gap-8">
-        <div className="flex gap-8">
+      <nav className="hidden md:flex items-center gap-9">
+        <div className="flex gap-10">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="dobby-header-link text-[#23235a] font-medium text-base hover:text-[#2d2e83] transition"
+              className="dobby-header-link text-[#23235a] font-medium text-base relative transition-colors duration-200
+                hover:text-[#2d2e83] after:content-[''] after:block after:h-[2px] after:bg-[#2d2e83] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left after:rounded-full after:mt-1"
+              style={{ paddingBottom: "2px" }}
             >
               {link.label}
             </a>
@@ -97,7 +99,7 @@ const Header = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-[#23235a] font-medium text-lg py-2"
+                  className="text-[#23235a] font-medium text-lg py-2 transition-colors duration-200 hover:text-[#2d2e83]"
                 >
                   {link.label}
                 </a>

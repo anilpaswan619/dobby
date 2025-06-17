@@ -37,14 +37,14 @@ const Hero = () => (
       <div className="dobby-hero-buttons flex flex-col gap-3 sm:flex-row sm:gap-4">
         <a
           href="https://apps.apple.com/"
-          className="flex items-center bg-black text-white rounded-lg px-4 min-w-[170px] h-[56px] shadow-md hover:bg-gray-900 transition"
+          className="flex items-center bg-black text-white rounded-lg p-5 min-w-[170px] h-[56px] shadow-md hover:bg-gray-900 transition"
           target="_blank"
           rel="noopener noreferrer"
         >
           <AppleIcon />
           <div className="flex flex-col text-left leading-tight">
             <span
-              className="text-[13px] font-normal"
+              className="text-[13px] font-normal mb-1"
               style={{ lineHeight: "1.1" }}
             >
               Download on the
@@ -59,14 +59,14 @@ const Hero = () => (
         </a>
         <a
           href="https://play.google.com/store"
-          className="dobby-store-btn flex items-center bg-black text-white rounded-lg px-4 no-underline min-w-[190px] h-[56px] shadow-md hover:bg-gray-900 transition"
+          className="dobby-store-btn flex items-center bg-black text-white rounded-lg p-5 no-underline min-w-[190px] h-[56px] shadow-md hover:bg-gray-900 transition"
           target="_blank"
           rel="noopener noreferrer"
         >
           <GooglePlayIcon />
           <div className="flex flex-col text-left leading-tight">
             <span
-              className="text-[13px] font-normal"
+              className="text-[13px] font-normal mb-1"
               style={{ lineHeight: "1.1" }}
             >
               GET IT ON
