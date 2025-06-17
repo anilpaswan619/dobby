@@ -41,7 +41,7 @@ const Header = () => {
         </span>
       </div>
       {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center gap-9">
+      <nav className="hidden lg:flex items-center gap-9">
         <div className="flex gap-10">
           {navLinks.map((link) => (
             <a
@@ -62,15 +62,15 @@ const Header = () => {
           Download App
         </a>
       </nav>
-      {/* Mobile Menu Icon */}
+      {/* Mobile/Tablet Menu Icon */}
       <button
-        className="md:hidden"
+        className="lg:hidden"
         aria-label="Open navigation"
         onClick={() => setOpen((v) => !v)}
       >
         <MenuIcon />
       </button>
-      {/* Mobile Nav Drawer */}
+      {/* Mobile/Tablet Nav Drawer */}
       {open && (
         <div
           className="fixed inset-0 z-50 bg-black/40 flex flex-col"

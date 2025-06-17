@@ -1,25 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+// Global variables
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: #ffffff;
+  --color-bg-dark: #0a0a0a;
+  --color-fg: #171717;
+  --color-fg-dark: #ededed;
+  --color-primary: #2d2e83;
+  --color-primary-dark: #23235a;
+  --color-accent: #ff8c3e;
+  --color-accent-light: #c89b7b;
+  --color-header-bg: #fff;
+  --color-header-border: #eee;
+  --color-header-shadow: 0 1px 4px rgba(24, 24, 106, 0.08);
+  --color-btn-bg: #18186a;
+  --color-btn-bg-hover: #2d2e83;
+  --color-btn-radius: 1.75rem;
+  --color-btn-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --color-hero-bg: #f5f5f5;
+  --color-store-btn-bg: #000;
+  --color-store-btn-radius: 0.75rem;
   --font-sans: "Poppins", Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-bg: var(--color-bg-dark);
+    --color-fg: var(--color-fg-dark);
+    --color-header-bg: #181818;
+    --color-header-border: var(--color-primary-dark);
+    --color-hero-bg: #181818;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-bg);
+  color: var(--color-fg);
   font-family: var(--font-sans);
   margin: 0;
   padding: 0;
@@ -28,8 +46,8 @@ body {
 /* Header */
 .dobby-header {
   width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  background: var(--color-header-bg);
+  border-bottom: 1px solid var(--color-header-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,6 +55,7 @@ body {
   box-sizing: border-box;
   position: relative;
   z-index: 50;
+  box-shadow: var(--color-header-shadow);
 }
 
 .dobby-header-logo {
@@ -46,7 +65,7 @@ body {
 .dobby-header-title {
   font-weight: 600;
   font-size: 1.5rem;
-  color: #2d2e83;
+  color: var(--color-primary);
   font-family: var(--font-sans);
 }
 
@@ -59,25 +78,25 @@ body {
 }
 
 .dobby-header-link:hover {
-  color: #2d2e83;
+  color: var(--color-primary);
 }
 
 .dobby-header-download {
   margin-left: 2rem;
-  background: #18186a;
+  background: var(--color-btn-bg);
   color: #fff;
-  border-radius: 1.75rem;
+  border-radius: var(--color-btn-radius);
   padding: 0.7rem 1.75rem;
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
-  box-shadow: 0 1px 4px rgba(24, 24, 106, 0.08);
+  box-shadow: var(--color-header-shadow);
   transition: background 0.2s;
   display: inline-block;
 }
 
 .dobby-header-download:hover {
-  background: #2d2e83;
+  background: var(--color-btn-bg-hover);
 }
 
 /* Hero */
@@ -87,7 +106,7 @@ body {
   justify-content: space-between;
   gap: 2.5rem;
   min-height: 33.75rem;
-  background: #f5f5f5;
+  background: var(--color-hero-bg);
 }
 
 .dobby-hero-content {
@@ -101,7 +120,7 @@ body {
 }
 
 .dobby-hero-label {
-  color: #ff8c3e;
+  color: var(--color-accent);
   font-weight: 600;
   letter-spacing: 0.08em;
   font-size: 1.05rem;
@@ -111,7 +130,7 @@ body {
 }
 
 .dobby-hero-title {
-  color: #23235a;
+  color: var(--color-primary-dark);
   font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.1;
@@ -120,7 +139,7 @@ body {
 }
 
 .dobby-hero-desc {
-  color: #23235a;
+  color: var(--color-primary-dark);
   font-size: 1.18rem;
   line-height: 1.6;
   margin-bottom: 1.125rem;
@@ -160,10 +179,10 @@ body {
 .dobby-store-btn {
   height: 3.5rem;
   min-width: 10.625rem;
-  background: #000;
+  background: var(--color-store-btn-bg);
   color: #fff;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: var(--color-store-btn-radius);
+  box-shadow: var(--color-btn-shadow);
   font-family: var(--font-sans);
   font-size: 0.9375rem;
   font-weight: 500;
@@ -197,15 +216,40 @@ body {
   max-height: 1.75rem;
 }
 
+/* Animations */
+@keyframes vertical-carousel {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-0.5rem);
+  }
+  40% {
+    transform: translateY(-1rem);
+  }
+  60% {
+    transform: translateY(-0.5rem);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-vertical-carousel {
+  animation: vertical-carousel 2s infinite;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .dobby-hero-content {
     padding-left: 3vw;
+    margin-top: 3rem !important;
   }
   .dobby-hero-house {
     width: 21.25rem;
-    height: 21.25rem;
-    padding: 0.625rem;
   }
 }
 
@@ -228,9 +272,6 @@ body {
     margin-right: 0;
     justify-content: center;
     margin-top: 3rem;
-  }
-  .dobby-hero-title {
-    font-size: 2.1rem;
   }
   .dobby-hero-title {
     font-size: 2.1rem;
