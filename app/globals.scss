@@ -214,7 +214,11 @@ body {
   max-width: 1.75rem;
   max-height: 1.75rem;
 }
-
+.previous,
+.next,
+.cursor-auto:hover {
+  cursor: pointer;
+}
 /* Animations */
 @keyframes vertical-carousel {
   0% {

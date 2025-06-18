@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         {/* Left: Logo and nav */}
-        <div>
+        <div className="w-full md:w-auto">
           <div className="flex items-center mb-6">
             <img
               src="/assets/home-img.png"
@@ -27,29 +27,30 @@ export default function Footer() {
               ™
             </span>
           </div>
-          <nav className="flex gap-8 mb-6">
+          <nav className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mb-6">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-white hover:underline transition"
+                className="text-white hover:underline transition text-sm sm:text-base"
               >
                 {link.label}
               </a>
             ))}
           </nav>
         </div>
+
         {/* Right: Newsletter and contact */}
-        <div className="flex flex-col items-end gap-4 w-full md:w-auto">
-          <form className="flex items-center gap-2 mb-2">
+        <div className="flex flex-col items-start md:items-end gap-4 w-full md:w-auto">
+          <form className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-2 w-full sm:w-auto">
             <input
               type="email"
               placeholder="Sign up for our newsletter"
-              className="rounded-full px-4 py-2 bg-[#23235a] text-white placeholder:text-gray-300 focus:outline-none w-100 md:w-80 transition duration-200 focus:ring-2 focus:ring-[#ff8c3e] focus:border-transparent"
+              className="rounded-full px-4 py-2 bg-[#23235a] text-white placeholder:text-gray-300 focus:outline-none w-full sm:w-72 md:w-80 transition duration-200 focus:ring-2 focus:ring-[#ff8c3e] focus:border-transparent"
             />
             <button
               type="submit"
-              className="rounded-full px-4 py-2 bg-[#23235a] hover:bg-[#ff8c3e] transition text-white flex items-center gap-1"
+              className="rounded-full px-4 py-2 bg-[#23235a] hover:bg-[#ff8c3e] transition text-white flex items-center cursor-auto gap-1"
             >
               <span>→</span>
             </button>
