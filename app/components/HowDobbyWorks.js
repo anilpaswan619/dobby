@@ -116,7 +116,7 @@ export default function HowDobbyWorks() {
         style={{ outline: "none" }}
       >
         {/* Left: Phone image */}
-        <div className="relative z-10 flex-1 flex w-full md:w-auto mb-10 md:mb-0 justify-start">
+        <div className="relative z-10 flex-1 flex w-full md:w-auto mb-10 md:mb-0 md:justify-start justify-center items-center md:ml-25">
           <div className="rounded-3xl shadow-xl border border-gray-100 bg-white p-4">
             <img
               src="/assets/mobile-img.png"
