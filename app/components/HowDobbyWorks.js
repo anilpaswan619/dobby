@@ -5,36 +5,48 @@ const CAROUSEL_ITEMS = [
   {
     color: "#ff8c3e",
     label: "BOOK",
-    desc: "Submit a request within minutes and connect directly to a vetted DobbyPRO within hours",
+    desc: "Submit a request within minutes and connect directly to a vetted DobbyPRO within hours.",
+    more: "Our booking process is seamless and fast, ensuring you get the help you need without any hassle. You can specify your needs, preferred time, and even add notes for the pro.",
+    extra:
+      "Dobby matches you with the best available pro based on your requirements and location.",
   },
   {
     color: "#ffe0c2",
     label: "PAYMENT",
-    desc: "Pay securely and easily through the app after the job is completed to your satisfaction",
+    desc: "Pay securely and easily through the app after the job is completed to your satisfaction.",
+    more: "All transactions are encrypted and receipts are stored for your records. No hidden fees, no surprises.",
+    extra:
+      "You can use your preferred payment method and manage all your payments in one place.",
   },
   {
     color: "#ffe0c2",
     label: "INVOICE",
-    desc: "Receive digital invoices and keep track of all your home maintenance expenses",
+    desc: "Receive digital invoices and keep track of all your home maintenance expenses.",
+    more: "Access your invoice history anytime and download them for your personal bookkeeping.",
+    extra:
+      "Invoices are clear, detailed, and always available in your Dobby account.",
   },
   {
     color: "#ff8c3e",
     label: "SUPPORT",
-    desc: "Get real-time updates and chat with our support team for any help you need",
+    desc: "Get real-time updates and chat with our support team for any help you need.",
+    more: "Our support team is available 24/7 to answer your questions and resolve any issues quickly.",
+    extra:
+      "You can reach us via chat, email, or phone—whatever is most convenient for you.",
   },
 ];
 
 function CarouselBar({ activeIndex, onDotClick }) {
   return (
     <div className="flex flex-col items-center h-20 w-4 mr-2 select-none">
-      {/* Active bar */}
+      {/* Active bar (always orange) */}
       <div className="flex flex-col justify-center items-center h-12 w-full transition-all duration-300">
         <div
           className="rounded w-full transition-all duration-300"
           style={{
-            height: "2rem",
+            height: "2.1rem",
             width: "0.7rem",
-            background: CAROUSEL_ITEMS[activeIndex].color,
+            background: "#ff8c3e", // Always orange, not dynamic
           }}
         ></div>
       </div>
@@ -44,7 +56,7 @@ function CarouselBar({ activeIndex, onDotClick }) {
           <button
             key={idx}
             type="button"
-            className={`block w-1.5 h-5 rounded-full border-0 transition-all duration-200 focus:outline-none ${
+            className={`block w-1.5 h-8 rounded-full border-0 transition-all duration-200 focus:outline-none ${
               idx === activeIndex ? "" : "opacity-60"
             }`}
             style={{
@@ -95,7 +107,7 @@ export default function HowDobbyWorks() {
   return (
     <section
       ref={containerRef}
-      className="container mx-auto relative flex flex-col md:flex-row items-center justify-center w-full py-16 px-4 bg-white overflow-hidden"
+      className="container mx-auto relative flex flex-col md:flex-row items-center justify-center w-full py-18 px-4 bg-white overflow-hidden"
       tabIndex={0}
       aria-label="How Dobby Works Carousel"
       style={{ outline: "none" }}
@@ -122,9 +134,17 @@ export default function HowDobbyWorks() {
             <span className="text-[#ff8c3e] font-semibold text-base mb-1 block">
               {CAROUSEL_ITEMS[active].label}
             </span>
-            <p className="text-[#23235a] text-base max-w-md">
+            <p className="text-[#23235a] text-base max-w-md mb-4">
               {CAROUSEL_ITEMS[active].desc}
             </p>
+            <p className="text-[#23235a] text-sm max-w-md opacity-80 mb-1">
+              {CAROUSEL_ITEMS[active].more}
+            </p>
+            {CAROUSEL_ITEMS[active].extra && (
+              <p className="text-[#23235a] text-sm max-w-md opacity-70">
+                {CAROUSEL_ITEMS[active].extra}
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ export default function BeingAHomeowner() {
   return (
     <section className=" container-fluid mx-auto flex flex-col md:flex-row items-center justify-around w-full py-16 px-4 bg-[#f5f5f5]">
       {/* Left: Image with accent */}
-      <div className="relative flex-1 flex justify-center items-center max-w-xl w-full">
+      <div className="relative flex-1 flex justify-center items-center max-w-3xl w-full">
         <img
           src="/assets/homemaker-img.png"
           alt="Family in kitchen"
@@ -12,7 +12,7 @@ export default function BeingAHomeowner() {
         />
       </div>
       {/* Right: Text content */}
-      <div className="flex-1 flex flex-col items-start md:pl-16 mt-10 md:mt-0 max-w-xl">
+      <div className="flex-1 flex flex-col items-start gap-6 mt-10 md:mt-0 max-w-xl">
         <span className="text-[#ff8c3e] text-base font-semibold tracking-wider mb-3 uppercase">
           BEING A HOMEOWNER
         </span>
