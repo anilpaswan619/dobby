@@ -11,9 +11,9 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="w-full bg-[#18186a] text-white pt-24 pb-10 px-4"
+      className="w-full bg-[#18186a] text-white pt-24 pb-10 md:px-20 px-4"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div className="max-w-8xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         {/* Left: Logo and nav */}
         <div className="w-full md:w-auto">
           <div className="flex items-center mb-6">

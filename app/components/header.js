@@ -84,7 +84,19 @@ const Header = () => {
         }`}
       >
         {/* Brand */}
-        <div className="flex items-center">
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            const el = document.getElementById("home");
+            if (el) {
+              window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
+            }
+            setOpen(false);
+          }}
+          className="flex items-center cursor-pointer select-none"
+          aria-label="Go to top"
+        >
           <img
             src="/assets/home-img.png"
             alt="Dobby Logo"
@@ -92,10 +104,10 @@ const Header = () => {
             width={44}
             height={44}
           />
-          <span className="dobby-header-title ml-3 text-2xl font-extrabold text-[#23235a] font-serif tracking-tight">
+          <span className="dobby-header-title ml-3 text-2xl font-extrabold text-[#23235a] mt-2 tracking-tight">
             dobby
           </span>
-        </div>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-12">
@@ -181,7 +193,7 @@ const Header = () => {
                   width={32}
                   height={32}
                 />
-                <span className="ml-2 text-xl font-bold text-[#23235a] font-serif">
+                <span className="ml-2 text-xl font-bold text-[#23235a] mt-2">
                   dobby
                 </span>
               </div>

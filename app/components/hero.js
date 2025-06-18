@@ -86,7 +86,7 @@ const Hero = () => (
         </a>
       </div>
     </div>
-    <div className="dobby-hero-image-wrap flex-1 flex items-center justify-center md:justify-end md:pr-25 md:mt-0">
+    <div className="dobby-hero-image-wrap flex-1 flex items-center justify-center md:justify-end md:pr-25 md:mt-25">
       <div className="dobby-hero-house rounded-3xl shadow-2xl overflow-hidden bg-white p-4">
         <img
           src="/assets/hero-home.png"
