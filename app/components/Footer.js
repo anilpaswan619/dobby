@@ -22,7 +22,7 @@ export default function Footer() {
               alt="Dobby Logo"
               className="w-10 h-10 mr-2"
             />
-            <span className="text-3xl tracking-tight">dobby</span>
+            <span className="text-4xl tracking-tight">dobby</span>
             <span className="ml-1 text-lg font-serif font-bold tracking-tight align-super">
               ™
             </span>
