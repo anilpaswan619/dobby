@@ -4,7 +4,7 @@ import HowDobbyWorks from "./components/HowDobbyWorks";
 import BeingAHomeowner from "./components/BeingAHomeowner";
 import AsSeenOn from "./components/AsSeenOn";
 import Testimonials from "./components/Testimonials";
-
+import CareCommunityPlanet from "./components/CareCommunityPlanet";
 export default function Home() {
   return (
     <div>
@@ -14,6 +14,7 @@ export default function Home() {
       <BeingAHomeowner />
       <AsSeenOn />
       <Testimonials />
+      <CareCommunityPlanet />
 
       {/* Footer */}
       <footer className="text-center py-8 bg-gray-100">

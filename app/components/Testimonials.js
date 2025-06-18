@@ -51,7 +51,7 @@ export default function Testimonials() {
       <h2 className="text-center text-3xl md:text-4xl font-bold text-[#23235a] mb-12">
         What is our community saying about us
       </h2>
-      <div className="flex items-center justify-center gap-2 md:gap-6 max-w-7xl mx-auto">
+      <div className="flex items-center justify-center gap-2 md:gap-6 max-w-9xl mx-auto">
         {/* Left Arrow */}
         <button
           onClick={handlePrev}

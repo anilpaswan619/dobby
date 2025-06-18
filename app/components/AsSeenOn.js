@@ -3,7 +3,7 @@ import React from "react";
 export default function AsSeenOn() {
   return (
     <section className="container mx-auto w-full bg-white py-12 flex items-center justify-center">
-      <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 w-full max-w-6xl">
+      <div className="flex flex-wrap justify-center items-center gap-10 md:gap-42 w-full max-w-6xl">
         <img
           src="/assets/org1.png"
           alt="Forbes"
