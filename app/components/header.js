@@ -19,12 +19,24 @@ const MenuIcon = ({ className = "" }) => (
 const navLinks = [
   { label: "Home", target: "home" },
   { label: "How it works", target: "how-dobby-works" },
-  { label: "Testimonials", target: "testimonials" },
   { label: "Partners", target: "as-seen-on" },
+  { label: "Testimonials", target: "testimonials" },
 ];
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -64,7 +76,13 @@ const Header = () => {
 
   return (
     <>
-      <header className="dobby-header fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all px-4 md:px-16 flex items-center h-20 justify-between">
+      <header
+        className={`dobby-header fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-16 flex items-center h-20 justify-between ${
+          isScrolled
+            ? "bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg"
+            : "bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm"
+        }`}
+      >
         {/* Brand */}
         <div className="flex items-center">
           <img
@@ -106,7 +124,6 @@ const Header = () => {
             className="dobby-header-download ml-8 bg-gradient-to-r from-[#ff8c3e] to-[#ffb300] text-white rounded-full px-8 py-3 font-semibold text-base shadow-lg hover:from-[#ffb300] hover:to-[#ff8c3e] transition flex items-center gap-2"
             style={{ display: "inline-flex", alignItems: "center" }}
           >
-            {/* ...existing code... */}
             <svg
               width="20"
               height="20"
