@@ -1,8 +1,18 @@
 import React from "react";
 
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "How it works", href: "#how-dobby-works" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Partners", href: "#as-seen-on" },
+];
+
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#18186a] text-white pt-24 pb-10 px-4">
+    <footer
+      id="footer"
+      className="w-full bg-[#18186a] text-white pt-24 pb-10 px-4"
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         {/* Left: Logo and nav */}
         <div>
@@ -12,21 +22,21 @@ export default function Footer() {
               alt="Dobby Logo"
               className="w-10 h-10 mr-2"
             />
-            <span className="text-3xl   tracking-tight">dobby</span>
+            <span className="text-3xl tracking-tight">dobby</span>
             <span className="ml-1 text-lg font-serif font-bold tracking-tight align-super">
               ™
             </span>
           </div>
           <nav className="flex gap-8 mb-6">
-            <a href="#" className="text-white hover:underline transition">
-              Home
-            </a>
-            <a href="#" className="text-white hover:underline transition">
-              About us
-            </a>
-            <a href="#" className="text-white hover:underline transition">
-              Partners
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-white hover:underline transition"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
         </div>
         {/* Right: Newsletter and contact */}

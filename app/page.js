@@ -5,6 +5,7 @@ import BeingAHomeowner from "./components/BeingAHomeowner";
 import AsSeenOn from "./components/AsSeenOn";
 import Testimonials from "./components/Testimonials";
 import CareCommunityPlanet from "./components/CareCommunityPlanet";
+import DownloadApp from "./components/DownloadApp";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <AsSeenOn />
       <Testimonials />
       <CareCommunityPlanet />
+      <DownloadApp />
       <Footer />
 
       {/* Footer */}

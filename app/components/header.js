@@ -21,7 +21,6 @@ const navLinks = [
   { label: "How it works", href: "#how-dobby-works" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Partners", href: "#as-seen-on" },
-  { label: "Contact", href: "#footer" },
 ];
 
 const Header = () => {
