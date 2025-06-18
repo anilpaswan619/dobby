@@ -1,41 +1,56 @@
+"use client";
 import React from "react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "How it works", href: "#how-dobby-works" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Partners", href: "#as-seen-on" },
+  { label: "Home", target: "home" },
+  { label: "How it works", target: "how-dobby-works" },
+  { label: "Partners", target: "as-seen-on" },
+  { label: "Testimonials", target: "testimonials" },
 ];
+
+function scrollToComponent(targetId) {
+  const targetElement = document.getElementById(targetId);
+  if (targetElement) {
+    const headerHeight = 80;
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+}
 
 export default function Footer() {
   return (
-    <footer
-      id="footer"
-      className="w-full bg-[#18186a] text-white pt-24 pb-10 md:px-20 px-4"
-    >
-      <div className="max-w-8xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+    <footer className="w-full bg-[#18186a] text-white pt-16 pb-8 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         {/* Left: Logo and nav */}
-        <div className="w-full md:w-auto">
+        <div className="w-full md:w-auto mb-8 md:mb-0">
           <div className="flex items-center mb-6">
             <img
               src="/assets/home-img.png"
               alt="Dobby Logo"
               className="w-10 h-10 mr-2"
             />
-            <span className="text-4xl tracking-tight">dobby</span>
+            <span className="text-3xl font-serif font-bold tracking-tight">
+              dobby
+            </span>
             <span className="ml-1 text-lg font-serif font-bold tracking-tight align-super">
               ™
             </span>
           </div>
-          <nav className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mb-6">
+          <nav className="flex flex-wrap gap-6 mb-6">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
-                className="text-white hover:underline transition text-sm sm:text-base"
+                type="button"
+                onClick={() => scrollToComponent(link.target)}
+                className="text-white hover:underline transition text-base bg-transparent border-none p-0 cursor-pointer"
+                style={{ background: "none" }}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </nav>
         </div>
