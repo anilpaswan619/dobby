@@ -17,9 +17,11 @@ const MenuIcon = ({ className = "" }) => (
 );
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About us", href: "#" },
-  { label: "Partners", href: "#" },
+  { label: "Home", href: "#home" },
+  { label: "How it works", href: "#how-dobby-works" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Partners", href: "#as-seen-on" },
+  { label: "Contact", href: "#footer" },
 ];
 
 const Header = () => {
@@ -56,7 +58,7 @@ const Header = () => {
           ))}
         </div>
         <a
-          href="#"
+          href="#footer"
           className="dobby-header-download ml-8 bg-[#18186a] text-white rounded-full px-7 py-2 font-semibold text-base shadow hover:bg-[#2d2e83] transition"
         >
           Download App
@@ -100,13 +102,15 @@ const Header = () => {
                   key={link.label}
                   href={link.href}
                   className="text-[#23235a] font-medium text-lg py-2 transition-colors duration-200 hover:text-[#2d2e83]"
+                  onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
               <a
-                href="#"
+                href="#footer"
                 className="bg-[#18186a] text-white rounded-full px-6 py-3 font-semibold text-base shadow hover:bg-[#2d2e83] transition mt-4 text-center"
+                onClick={() => setOpen(false)}
               >
                 Download App
               </a>
