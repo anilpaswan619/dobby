@@ -47,7 +47,10 @@ export default function Testimonials() {
     setActive((prev) => (prev === TESTIMONIALS.length - 1 ? 0 : prev + 1));
 
   return (
-    <section className="w-full bg-[#f5f5f5] py-16 md:py-32 px-2">
+    <section
+      id="testimonials"
+      className="w-full bg-[#f5f5f5] py-16 md:py-32 px-2"
+    >
       <h2 className="text-center text-3xl md:text-4xl font-bold text-[#23235a] mb-12">
         What is our community saying about us
       </h2>

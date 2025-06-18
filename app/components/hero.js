@@ -42,7 +42,7 @@ const Hero = () => (
       <div className="dobby-hero-buttons flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
         <a
           href="https://apps.apple.com/"
-          className="flex items-center bg-gradient-to-r from-[#18186a] to-[#23235a] text-white rounded-xl px-7 py-4 min-w-[180px] shadow-lg hover:from-[#23235a] hover:to-[#18186a] transition"
+          className="flex items-center bg-gradient-to-r md:m-0 m-4 from-[#18186a] to-[#23235a] text-white rounded-xl px-7 py-4 min-w-[180px] shadow-lg hover:from-[#23235a] hover:to-[#18186a] transition"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -64,7 +64,7 @@ const Hero = () => (
         </a>
         <a
           href="https://play.google.com/store"
-          className="dobby-store-btn flex items-center bg-gradient-to-r from-[#18186a] to-[#23235a] text-white rounded-xl px-7 py-4 min-w-[180px] shadow-lg hover:from-[#23235a] hover:to-[#18186a] transition"
+          className="dobby-store-btn flex items-center md:m-0 m-4 bg-gradient-to-r from-[#18186a] to-[#23235a] text-white rounded-xl px-7 py-4 min-w-[180px] shadow-lg hover:from-[#23235a] hover:to-[#18186a] transition"
           target="_blank"
           rel="noopener noreferrer"
         >
