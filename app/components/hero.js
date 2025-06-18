@@ -20,37 +20,42 @@ const GooglePlayIcon = () => (
 );
 
 const Hero = () => (
-  <section className="dobby-hero">
-    <div className="dobby-hero-content">
-      <span className="dobby-hero-label">MEET DOBBY</span>
-      <h1 className="dobby-hero-title">
+  <section
+    id="home"
+    className="dobby-hero flex flex-col md:flex-row items-center justify-between gap-10 px-4 md:px-16 py-20 bg-gradient-to-br from-[#fff7f0] via-[#f5f5f5] to-[#f0f7ff] min-h-[80vh]"
+  >
+    <div className="dobby-hero-content flex-1 flex flex-col justify-center items-start gap-7 max-w-xl">
+      <span className="dobby-hero-label text-[#ff8c3e] font-bold tracking-widest text-sm mb-2 uppercase">
+        MEET DOBBY
+      </span>
+      <h1 className="dobby-hero-title text-[#23235a] font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4">
         The future of home
         <br />
         maintenance
       </h1>
-      <p className="dobby-hero-desc">
+      <p className="dobby-hero-desc text-[#23235a] text-lg md:text-xl leading-relaxed mb-8">
         Being a homeowner is hard enough.
         <br />
         Let Dobby tackle your to-do list with the best pros, transparent
         pricing, and lots of love.
       </p>
-      <div className="dobby-hero-buttons flex flex-col gap-3 sm:flex-row sm:gap-4">
+      <div className="dobby-hero-buttons flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
         <a
           href="https://apps.apple.com/"
-          className="flex items-center bg-black text-white rounded-lg p-5 min-w-[170px] h-[56px] shadow-md hover:bg-gray-900 transition"
+          className="flex items-center bg-gradient-to-r from-[#18186a] to-[#23235a] text-white rounded-xl px-7 py-4 min-w-[180px] shadow-lg hover:from-[#23235a] hover:to-[#18186a] transition"
           target="_blank"
           rel="noopener noreferrer"
         >
           <AppleIcon />
           <div className="flex flex-col text-left leading-tight">
             <span
-              className="text-[13px] font-normal mb-1"
+              className="text-xs font-normal mb-1"
               style={{ lineHeight: "1.1" }}
             >
               Download on the
             </span>
             <span
-              className="font-semibold text-[20px] -mt-1"
+              className="font-semibold text-lg -mt-1"
               style={{ lineHeight: "1.1" }}
             >
               App Store
@@ -59,20 +64,20 @@ const Hero = () => (
         </a>
         <a
           href="https://play.google.com/store"
-          className="dobby-store-btn flex items-center bg-black text-white rounded-lg p-5 no-underline min-w-[190px] h-[56px] shadow-md hover:bg-gray-900 transition"
+          className="dobby-store-btn flex items-center bg-gradient-to-r from-[#18186a] to-[#23235a] text-white rounded-xl px-7 py-4 min-w-[180px] shadow-lg hover:from-[#23235a] hover:to-[#18186a] transition"
           target="_blank"
           rel="noopener noreferrer"
         >
           <GooglePlayIcon />
           <div className="flex flex-col text-left leading-tight">
             <span
-              className="text-[13px] font-normal mb-1"
+              className="text-xs font-normal mb-1"
               style={{ lineHeight: "1.1" }}
             >
               GET IT ON
             </span>
             <span
-              className="font-semibold text-[20px] -mt-1"
+              className="font-semibold text-lg -mt-1"
               style={{ lineHeight: "1.1" }}
             >
               Google Play
@@ -81,13 +86,12 @@ const Hero = () => (
         </a>
       </div>
     </div>
-
-    <div className="dobby-hero-image-wrap">
-      <div className="dobby-hero-house">
+    <div className="dobby-hero-image-wrap flex-1 flex items-center justify-center md:justify-end  md:mt-0">
+      <div className="dobby-hero-house rounded-3xl shadow-2xl overflow-hidden bg-white p-4">
         <img
           src="/assets/hero-home.png"
           alt="Home"
-          className="dobby-hero-image"
+          className="dobby-hero-image w-full h-full object-cover"
         />
       </div>
     </div>

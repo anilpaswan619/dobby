@@ -20,7 +20,6 @@ export default function Home() {
       <CareCommunityPlanet />
       <DownloadApp />
       <Footer />
-
       {/* Footer */}
       <footer className="text-center py-2 bg-gray-100">
         <p className="text-gray-600 text-sm">
